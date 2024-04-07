@@ -17,6 +17,10 @@ public class Main {
                 case 1:
                     System.out.println("Input size of array: ");
                     int num = sc.nextInt();
+                    if (num <= 0){
+                        recursion.error();
+                        continue;
+                    }
                     int[] arr = new int[num];
                     for(int i = 0; i < num; i++){
                         System.out.print("Write " + i + " element of array: ");
@@ -28,6 +32,10 @@ public class Main {
                 case 2:
                     System.out.println("Input size of array: ");
                     num = sc.nextInt();
+                    if (num <= 0){
+                        recursion.error();
+                        continue;
+                    }
                     arr = new int[num];
                     for(int i = 0; i < num; i++){
                         System.out.print("Write " + i + " element of array: ");
@@ -39,13 +47,25 @@ public class Main {
                 case 3:
                     System.out.println("Input number to check: ");
                     num = sc.nextInt();
-                    System.out.println("Number num : " + (recursion.isPrime(num)?"prime":"composite"));
+                    System.out.println("Number "+ num + " is " + (recursion.isPrime(num)?"prime":"composite"));
                     break;
                 case 4:
-                    recursion.problem_4();
+                    System.out.println("Input number to find its factorial: ");
+                    num = sc.nextInt();
+                    if(num < 0) {
+                        recursion.error();
+                        continue;
+                    }
+                    System.out.println("Factorial of " + num + ": " + recursion.factorial(num));
                     break;
                 case 5:
-                    recursion.problem_5();
+                    System.out.println("Input number to find its fibonacci sequence: ");
+                    num = sc.nextInt();
+                    if(num < 0) {
+                        recursion.error();
+                        continue;
+                    }
+                    System.out.println("Factorial of " + num + ": " + recursion.fibonacci(num));
                     break;
                 case 6:
                     recursion.problem_6();

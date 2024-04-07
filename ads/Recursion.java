@@ -4,6 +4,9 @@ import static java.lang.Math.sqrt;
 
 public class Recursion {
     Scanner sc = new Scanner(System.in);
+    public void error() {
+        System.out.println("Wrong input");
+    }
 
     public int findingMin(int n, int[] arr) {
         if (n == 0) {
@@ -35,11 +38,12 @@ public class Recursion {
         return true;
     }
 
-    public void problem_4() {
-
+    public int factorial(int n) {
+         if (n == 0) return 1;
+         return n * factorial(n  - 1);
     }
 
-    public void problem_5() {
+    public void fibonacci() {
 
     }
 
