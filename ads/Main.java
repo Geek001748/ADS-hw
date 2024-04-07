@@ -5,7 +5,7 @@ public class Main {
         boolean go = true;
         do {
             System.out.println("Write 0 to exit");
-            System.out.println("Which problem to show write number (1-10");
+            System.out.println("Which problem to show write number (1-10): ");
             Scanner sc = new Scanner(System.in);
             int number = sc.nextInt(); // example number, you can set this to any number between 0 and 10
             Recursion recursion = new Recursion();
@@ -15,7 +15,15 @@ public class Main {
                     go = false;
                     break;
                 case 1:
-                    recursion.problem_1();
+                    System.out.println("Input size of array: ");
+                    int num = sc.nextInt();
+                    int[] arr = new int[num];
+                    for(int i = 0; i < num; i++){
+                        System.out.print("Write " + i + " element of array: ");
+                        arr[i] = sc.nextInt();
+                        System.out.println();
+                    }
+                    System.out.println("Min number in array: " + recursion.findingMin(num, arr));
                     break;
                 case 2:
                     recursion.problem_2();
