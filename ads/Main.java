@@ -26,10 +26,20 @@ public class Main {
                     System.out.println("Min number in array: " + recursion.findingMin(num, arr));
                     break;
                 case 2:
-                    recursion.problem_2();
+                    System.out.println("Input size of array: ");
+                    num = sc.nextInt();
+                    arr = new int[num];
+                    for(int i = 0; i < num; i++){
+                        System.out.print("Write " + i + " element of array: ");
+                        arr[i] = sc.nextInt();
+                        System.out.println();
+                    }
+                    System.out.println("Average number of array: " + recursion.sum(num, arr) / num);
                     break;
                 case 3:
-                    recursion.problem_3();
+                    System.out.println("Input number to check: ");
+                    num = sc.nextInt();
+                    System.out.println("Number num : " + (recursion.isPrime(num)?"prime":"composite"));
                     break;
                 case 4:
                     recursion.problem_4();
