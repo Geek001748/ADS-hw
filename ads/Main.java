@@ -108,7 +108,33 @@ public class Main {
                     System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 7:
-                    recursion.problem_7();
+                    System.out.println("Input size of array: ");
+                    num = sc.nextInt();
+                    if (num <= 0){
+                        recursion.error();
+                        continue;
+                    }
+                    arr = new int[num];
+                    for(int i = 0; i < num; i++){
+                        System.out.print("Write " + i + " element of array: ");
+                        arr[i] = sc.nextInt();
+                        System.out.println();
+                    }
+                    System.out.println("Original array: ");
+                    for(int i = 0; i < num; i++){
+                        System.out.print(arr[i] + " ");
+                    }
+                        System.out.println();
+                    startTime = System.nanoTime();
+                    recursion.reverse(0, num - 1, arr);
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println("Reversed array: ");
+                    for(int i = 0; i < num; i++){
+                        System.out.print(arr[i] + " ");
+                    }
+                    System.out.println();
+                    System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 8:
                     recursion.problem_8();

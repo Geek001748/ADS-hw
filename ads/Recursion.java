@@ -101,8 +101,23 @@ public class Recursion {
          return a * power(a,n-1);
     }
 
-    public void problem_7() {
-
+    /**
+     * This method reverses the order of all elements in an array using recursion.
+     * Time complexity: O(n), where n is the number of elements to be reversed.
+     * Using recursion, the method swaps the l-th element with the r-th element and recursively continues this
+     * process for the subarray until all elements are reversed.
+     * The result is linear time complexity.
+     * @param arr The array to be reversed.
+     * @param l (LEFT)The starting index for the reverse operation.
+     * @param r (RIGHT)The ending index for the reverse operation.
+     */
+    public void reverse(int l, int r, int[] arr) {
+        if (r > l) {
+            int temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            reverse(l + 1, r - 1, arr);
+        }
     }
 
     public void problem_8() {
