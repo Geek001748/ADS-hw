@@ -125,6 +125,7 @@ public class Recursion {
      * It checks every letter and then return true/false.
      * Time complexity: O(n), where n is the size of word.
      * Using isDigit, it checks first letter and by recursion checks next letters .
+     * The result is linear time complexity.
      * @param s The word which we check.
      * @return true/false Is the input number consist of digits only or not.
      */
@@ -133,9 +134,20 @@ public class Recursion {
           return true;
       return Character.isDigit(s.charAt(0)) && isAllDigits(s.substring(1));
     }
-
-    public void problem_9() {
-
+     /**
+     * This method calculates the binomial coefficient C(n, k) using recursion.
+     * Time complexity: O(2^n), where n is the number of total items.
+     * Using recursion, the method calculates the binomial coefficient by calling itself with the parameters (n - 1, k - 1) and (n - 1, k).
+     * The result is exponential time complexity.
+     * @param n The total number of items.
+     * @param k The number of items to choose.
+     * @return The binomial coefficient for the given values of n and k.
+     */
+    public int binomialCoefficient(int n, int k) {
+         if (k == 0 || k == n) {
+             return 1;
+         }
+         return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
     }
 
     public void problem_10() {

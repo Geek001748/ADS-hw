@@ -148,7 +148,20 @@ public class Main {
                     System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 9:
-                    recursion.problem_9();
+                    System.out.println("Input total number of items: ");
+                    num = sc.nextInt();
+                    System.out.println("Input number of items to choose: ");
+                    int toChoose = sc.nextInt();
+                    if (num < 0 && toChoose < 0){
+                        recursion.error();
+                        continue;
+                    }
+                    startTime = System.nanoTime();
+                    resultInt = (recursion.binomialCoefficient(num,toChoose));
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println("C(" + num + " , " + toChoose + ") = " + resultInt);
+                    System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 10:
                     recursion.problem_10();
