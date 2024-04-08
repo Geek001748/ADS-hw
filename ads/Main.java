@@ -164,7 +164,26 @@ public class Main {
                     System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 10:
-                    recursion.problem_10();
+                    System.out.println("Input number a: ");
+                    if (!sc.hasNextInt()) {
+                        recursion.error();
+                        sc.next();
+                        continue;
+                    }
+                    int a = sc.nextInt();
+                    System.out.println("Input number b: ");
+                    if (!sc.hasNextInt()) {
+                        recursion.error();
+                        sc.next();
+                        continue;
+                    }
+                    int b = sc.nextInt();
+                    startTime = System.nanoTime();
+                    resultInt = (recursion.gcd(a,b));
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println("GCD(" + a + " , " + b + ") = " + resultInt);
+                    System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 default:
                     System.out.println("Number not in range 0-10");

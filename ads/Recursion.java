@@ -149,8 +149,19 @@ public class Recursion {
          }
          return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
     }
-
-    public void problem_10() {
-
+    /**
+     * This method calculates the greatest common divisor (GCD) of two numbers using recursion.
+     * Time complexity: O(log(n)), where n is minimum of input numbers.
+     * Using recursion, the method applies Euclid's algorithm.
+     * The result is logarithmic time complexity.
+     * @param a The first number.
+     * @param b The second number.
+     * @return The greatest common divisor of a and b.
+     */
+    public int gcd(int a, int b) {
+       if (b == 0) {
+           return a;
+       }
+       return gcd(b, a % b);
     }
 }
