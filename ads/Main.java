@@ -137,7 +137,15 @@ public class Main {
                     System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 8:
-                    recursion.problem_8();
+                    System.out.println("Input word to check: ");
+                    sc.nextLine();
+                    String word = sc.nextLine();
+                    startTime = System.nanoTime();
+                    resultString = (recursion.isAllDigits(word)?"Yes":"No");
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println(word + " consist of digits only?  " + resultString);
+                    System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 9:
                     recursion.problem_9();

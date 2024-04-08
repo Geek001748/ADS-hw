@@ -120,8 +120,18 @@ public class Recursion {
         }
     }
 
-    public void problem_8() {
-
+    /**
+     * This method checks if input word is consist of digits only.
+     * It checks every letter and then return true/false.
+     * Time complexity: O(n), where n is the size of word.
+     * Using isDigit, it checks first letter and by recursion checks next letters .
+     * @param s The word which we check.
+     * @return true/false Is the input number consist of digits only or not.
+     */
+    public boolean isAllDigits(String s) {
+      if(s.isEmpty())
+          return true;
+      return Character.isDigit(s.charAt(0)) && isAllDigits(s.substring(1));
     }
 
     public void problem_9() {
