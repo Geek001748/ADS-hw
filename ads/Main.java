@@ -27,7 +27,12 @@ public class Main {
                         arr[i] = sc.nextInt();
                         System.out.println();
                     }
-                    System.out.println("Min number in array: " + recursion.findingMin(num, arr));
+                    double startTime = System.nanoTime();
+                    int resultInt = recursion.findingMin(num, arr);
+                    double endTime = System.nanoTime();
+                    double duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println("Min number in array: " + resultInt);
+                    System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 2:
                     System.out.println("Input size of array: ");
@@ -42,12 +47,22 @@ public class Main {
                         arr[i] = sc.nextInt();
                         System.out.println();
                     }
-                    System.out.println("Average number of array: " + recursion.sum(num, arr) / num);
+                    startTime = System.nanoTime();
+                    double resultDouble = recursion.sum(num, arr) / num;
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println("Average number of array: " + resultDouble);
+                    System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 3:
                     System.out.println("Input number to check: ");
                     num = sc.nextInt();
-                    System.out.println("Number "+ num + " is " + (recursion.isPrime(num)?"prime":"composite"));
+                    startTime = System.nanoTime();
+                    String resultString = (recursion.isPrime(num)?"prime":"composite");
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println("Number " + num + " is " + resultString);
+                    System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 4:
                     System.out.println("Input number to find its factorial: ");
@@ -56,8 +71,13 @@ public class Main {
                         recursion.error();
                         continue;
                     }
-                    System.out.println("Factorial of " + num + ": " + recursion.factorial(num));
-                    break;
+                     startTime = System.nanoTime();
+                     resultInt = recursion.factorial(num);
+                     endTime = System.nanoTime();
+                     duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                     System.out.println("Factorial of " + num + ": " + resultInt);
+                     System.out.println("Time taken: " + duration + " milliseconds");
+                     break;
                 case 5:
                     System.out.println("Input number to find its fibonacci sequence: ");
                     num = sc.nextInt();
@@ -65,8 +85,12 @@ public class Main {
                         recursion.error();
                         continue;
                     }
-                    System.out.println("Factorial of " + num + ": " + recursion.fibonacci(num));
-                    break;
+                    startTime = System.nanoTime();
+                    resultInt = recursion.fibonacci(num);
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println(num + " number in the Fibonacci sequence: " + resultInt);
+                    System.out.println("Time taken: " + duration + " milliseconds");
                 case 6:
                     recursion.problem_6();
                     break;
