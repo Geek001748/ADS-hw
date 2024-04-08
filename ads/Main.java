@@ -92,7 +92,20 @@ public class Main {
                     System.out.println(num + " number in the Fibonacci sequence: " + resultInt);
                     System.out.println("Time taken: " + duration + " milliseconds");
                 case 6:
-                    recursion.problem_6();
+                    System.out.println("Input number: ");
+                    num = sc.nextInt();
+                    System.out.println("Input power: ");
+                    int power = sc.nextInt();
+                    if(power < 0) {
+                        recursion.error();
+                        continue;
+                    }
+                    startTime = System.nanoTime();
+                    resultInt = recursion.power(num, power);
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                    System.out.println(power + "-th power of number " + num + " is: " + resultInt);
+                    System.out.println("Time taken: " + duration + " milliseconds");
                     break;
                 case 7:
                     recursion.problem_7();

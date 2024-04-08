@@ -87,9 +87,18 @@ public class Recursion {
         if (n == 1) return 1;
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
-
-    public void problem_6() {
-
+     /**
+     * This method calculates the n-th power of a given number using recursion.
+     * Time complexity: O(n), where n is the input number.
+     * Using recursion, the method multiplies the number a by the result of a raised to the power of (n - 1).
+     * The result has linear time complexity.
+     * @param a The base number to be raised to the power n.
+     * @param n The exponent value.
+     * @return The result of a raised to the power n.
+     */
+    public int power(int a, int n) {
+         if (n == 0) return 1;
+         return a * power(a,n-1);
     }
 
     public void problem_7() {
